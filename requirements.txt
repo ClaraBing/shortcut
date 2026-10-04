@@ -1,0 +1,5 @@
+torch>=2.1
+numpy
+hydra-core>=1.3
+pytest
+wandb  # optional, for train wandb.enabled=true

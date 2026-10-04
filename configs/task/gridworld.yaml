@@ -1,0 +1,4 @@
+name: gridworld
+n: 9
+prob1: 0.5
+label_type: state  # state | parity | boundary

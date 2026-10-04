@@ -1,0 +1,4 @@
+name: abab
+prob1: 0.5
+prob_abab_pos_sample: 0.25  # probability of a positive sample, i.e. 0101...
+label_type: state           # state | boundary

@@ -1,0 +1,3 @@
+name: alternating
+n: 5
+label_type: state  # state | first_chair

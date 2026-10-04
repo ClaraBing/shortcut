@@ -1,0 +1,4 @@
+name: cyclic
+n: 5
+n_actions: 2
+label_type: state

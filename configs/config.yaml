@@ -1,0 +1,53 @@
+defaults:
+  - task: dihedral
+  - _self_
+
+seed: 0
+device: auto  # auto | cpu | cuda | cuda:0 ...
+
+data:
+  length: 100        # training sequence length
+  eval_length: null  # additional eval at this length (e.g. > length for length generalization); null = training length only
+
+model:
+  n_layer: 4
+  n_head: 8
+  n_embd: 512
+  mlp_ratio: 4
+  dropout: 0.0
+  bias: true
+  causal: true
+  pos_emb: sinusoidal  # sinusoidal | learned
+  block_size: null   # number of learned positional embeddings (unused for sinusoidal); null = max(data.length, data.eval_length)
+
+train:
+  batch_size: 64
+  max_steps: 20000
+  lr: 3e-4
+  min_lr: 3e-5       # cosine decay to min_lr after warmup; set equal to lr for a constant schedule
+  warmup_steps: 1000
+  weight_decay: 0.01
+  betas: [0.9, 0.95]
+  grad_clip: 1.0     # 0 disables
+  loss_last_only: false
+  ema_decay: 0.0     # 0 disables EMA; e.g. 0.999
+  patience: null     # early stop after this many evals without improvement in eval acc; null disables
+  log_every: 100
+
+eval:
+  every: 500
+  n_samples: 2048
+  batch_size: 256
+
+wandb:
+  enabled: false
+  project: shortcut
+  entity: null
+  name: null
+
+hydra:
+  run:
+    dir: outputs/${task.name}/${now:%Y-%m-%d_%H-%M-%S}
+  sweep:
+    dir: multirun/${now:%Y-%m-%d_%H-%M-%S}
+    subdir: ${hydra.job.num}

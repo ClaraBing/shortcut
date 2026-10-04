@@ -1,0 +1,5 @@
+name: permutation_reset
+n: 5
+generators: ['12340', '10234']  # each maps state -> generator[state]
+perm_probs: null  # sampling probabilities of the generators; null = uniform
+label_type: state

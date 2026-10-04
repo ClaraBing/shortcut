@@ -1,0 +1,16 @@
+ckpt: ???          # path to a checkpoint saved by train.py (best.pt or last.pt)
+length: null       # eval sequence length; null = the training length (must be <= the model's block_size)
+n_samples: 2048
+batch_size: 256
+seed: 12345
+use_ema: false
+device: auto
+
+defaults:
+  - override hydra/job_logging: none
+  - _self_
+
+hydra:
+  output_subdir: null
+  run:
+    dir: .

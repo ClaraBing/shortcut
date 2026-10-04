@@ -1,0 +1,4 @@
+name: symmetric
+n: 5
+n_actions: 3  # identity, shift, swap; more adds other permutations
+label_type: state  # state | first_chair
