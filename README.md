@@ -2,7 +2,6 @@
 
 Train GPT-style transformers to simulate automata, as in
 [Transformers Learn Shortcuts to Automata](https://arxiv.org/abs/2210.10749).
-This is a cleaned-up version of `seq-reps`.
 
 Each task is a finite-state machine. The model reads a sequence of input symbols and predicts the state
 (or a label of the state) at every position. Training data is generated fresh at every step.
