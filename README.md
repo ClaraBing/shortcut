@@ -16,7 +16,7 @@ python -m pytest tests
 ## Train
 
 ```bash
-python train.py                                        # default: dihedral (D_8), length 100
+python train.py                                        # default: parity
 python train.py task=symmetric task.n=5 data.length=64 model.n_layer=6
 python train.py task=parity train.loss_last_only=true  # loss on the last position only
 python train.py task=cyclic data.eval_length=200       # also evaluate at length 200
